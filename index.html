@@ -1,99 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid</title>
     <style>
-        *{margin:0; padding:0; box-sizing: border-box;}
-        h1{display: none;}
-        section{max-width: 1000px; margin:auto; position: relative; overflow: hidden;
-        margin-top: 50px;}
-        img{width: 100%; display: block; transition: 0.5s;}
-        img:not(:first-of-type){position: absolute; top:0; left:0;}
-        img:nth-of-type(6){animation: title1 0.5s 0.3s both;}
-        [alt="첫 마스크"]{animation: scale 1s 0.5s both;}
-        [src*="4-2"]{animation: left 1s 0.3s both;}
-        [src*="4-4"]{animation: right 1s 0.3s both;}
-        [src*="4-6"]{animation: rightF 3s 1s both infinite;}
-        [src*="4-7"]{animation: rightS 3s 1.5s both infinite;}
-        [src*="4-8"]{animation: rightT 3s 1.7s both infinite;}
-        [alt="손소독제"]{animation: skew 1s 0.7s both;}
-        [src="images/4-9.png"]{animation: down 0.5s 0.1s both;}
-        img:last-of-type{animation: rotate 1s 0.5s both;}
+        * {margin:0; padding:0; box-sizing: border-box;}
+        h1 {display: none;}
+        section {max-width: 1000px; margin: auto; border:5px dashed red; margin-top: 50px; position: relative; }
+        img     {display: block; height: auto; width:100%;}
+        img:not(:first-of-type) {position: absolute;}
+        [src *= "bg4"] {width:100%;}
+        [alt="마스크"] {top:15%; width:50%; animation: mask 2.5s both infinite alternate-reverse;}
+        [alt="제목"]{top:0; width:40%; animation: title1 3s both infinite alternate-reverse}
+        [alt="왼손"]{top:50%; width:30%; animation: up 1s both infinite;}
+        img:nth-of-type(5){width:20%; top:5%; left:75%; animation:skew 1s both infinite;}
+        [src="images/4-5.png"] {width:30%; top:60%; left:65%; animation: rightH 1s both infinite;}
+        [alt="첫문자"] {width:15%; top:55%; left:80%; animation: scale 1s 1s both ;}
+        [alt="두문자"] {width:15%;top:62%; left:80%; animation: scale 1s 1.5s both ;}
+        [alt="세문자"] {width:15%; top:69%; left:80%; animation: scale 1s 2s both ;}
+        [alt="별"]{width:10%; top:10%; left:85%; animation: scale 1s both infinite;}
+        [alt="돋보기"]{width:25%; top:10%; left:60%; animation: scale 1s  both infinite alternate-reverse} 
+        [alt="주소"]{top:95%; width: 30%; left:20%; animation: rotate 1s both;}
 
-        @keyframes title1 {
-                from{transform: translateX(0%);}
-                to{transform: translateX(15%); }
-        }
-        @keyframes scale{
-            0%{transform: scale(0); opacity: 0;}
-            100%{transform: scale(1.0); opacity: 1;}
-        }
-        @keyframes left{
-            from{left:100px;}
-            to{left:0px;}
-        }
-
-        @keyframes right{
-            from{transform: translateX(-20%);
-            to{transform: translate(0%);}}
-        }
-
-        @keyframes rightF{
-            from{opacity: 0; transform: scale(0);}
-            to{opacity: 1; transform: scale(1);}
            
+        @keyframes mask{
+            from{transform: scale(0) rotate(-720deg); }
+            to{transform: scale(0.7) rotate(0);}
+        }
+
+        @keyframes title1{
+            0%{transform: scale(0);}
+            20%{transform: scale(0.3);}
+            50%{transform: scale(0.5);}
+            70%{transform: scale(0.7);}
+            100%{transform: scale(1);}
+        }
+
+        @keyframes up {
+            0%{transform: translateY(50px);}
+            100%{transform: translateY(0);}
         }
 
         @keyframes skew{
-            from{transform: skew(30deg);}
-            to{transform: skew(0);}
-        }
-        
-        @keyframes rightS{
-            from{opacity: 0; transform: scale(0);}
-            to{opacity: 1; transform: scale(1);}
-           
+            from{transform: skewX(-50deg);}
+            to{transform: skew(0deg);}
         }
 
-        @keyframes rightT{
-            from{opacity: 0; transform: scale(0);}
-            to{opacity: 1; transform: scale(1);}
-           
+        @keyframes rightH{
+            from{transform: translateX(20%);}
+            to{transform: translateX(0);}
         }
 
-        @keyframes down{
-            from{opacity: 0; transform: translateY(20%);}
-            to{opacity: 1; transform: translateY(0);}
-        
+        @keyframes scale{
+            from{transform: scale(0);}
+            to{transform: scale(1);}
         }
-
         @keyframes rotate{
-            0%{transform: rotate(0deg);}
-            50%{transform: rotate(30deg);}
-            100%{transform: rotate(0deg);}
-
+            from{transform: rotate(10deg);}
+            to{transform: rotate(0);}
         }
-
+        
     </style>
 </head>
 <body>
-    <div>
-        <section> <h1>코로나</h1>
+    <section>
+        <h1>코비드 극복하기</h1>
         <img src="images/bg4.jpg" alt="배경">
-        <img src="images/4-1.png" alt="첫 마스크">
-        <img src="images/4-2.png" alt="왼쪽 손">
-        <img src="images/4-3.png" alt="손소독제">
-        <img src="images/4-4.png" alt="오른쪽 손">
-        <img src="images/4-5.png" alt="왼쪽 문자">
-        <img src="images/4-6.png" alt="오른 문자">
-        <img src="images/4-7.png" alt="오른 2번">
-        <img src="images/4-8.png" alt="오른 3번">
-        <img src="images/4-9.png" alt="돋보기">
-        <img src="images/4-10.png" alt="밑 문자">
+        <img src="images/4-1.png" alt="마스크">
+        <img src="images/4-2.png" alt="제목">
+        <img src="images/4-3.png" alt="왼손">
+        <img src="images/4-4.png" alt="소독제">
+        <img src="images/4-5.png" alt="오른손">
+        <img src="images/4-6.png" alt="첫문자">
+        <img src="images/4-7.png" alt="두문자">
+        <img src="images/4-8.png" alt="세문자">
+        <img src="images/4-9.png" alt="별">
+        <img src="images/4-10.png" alt="돋보기">
+        <img src="images/4-11.png" alt="주소"> 
     </section>
-
-    </div>
 </body>
 </html>
